@@ -16,17 +16,14 @@ public class PaginationController {
     PaginationService paginationService;
 
     @GetMapping("/gallerycount")
-    public Integer galleryCount(){
+    public Integer galleryCount() {
+        Integer count = paginationService.gallerycount();
+        return count;
+    }
 
-        try{
-            Integer count = paginationService.gallerycount();
-            return count;
-        }catch (NullPointerException e){
-            log.debug(e.getMessage());
-            return -100;
-        }catch (Exception e){
-            log.debug(e.getMessage());
-            return -200;
-        }
+    @GetMapping("countgallerypage")
+    public Integer gallerypage() {
+        Integer pageNum = paginationService.gallerycountpage();
+        return pageNum;
     }
 }
