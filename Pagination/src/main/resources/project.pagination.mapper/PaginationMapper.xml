@@ -6,4 +6,23 @@
         SELECT COUNT(*)
         FROM PHOTO.gallary g
     </select>
+
+    <select id = "indexPagination" resultType="com.example.pagination.meta.ItemVo">
+        SELECT *
+        FROM item
+        ORDER BY sequence DESC
+            LIMIT ${skip}, ${take}
+        ;
+    </select>
+
+    <select id = "cursorPagination" resultType="com.example.pagination.meta.ItemVo">
+        <![CDATA[
+        SELECT vin
+        FROM item
+        WHERE sequence < ${cursor}
+        ORDER BY sequence DESC
+            LIMIT ${take}
+        ;
+        ]]>
+    </select>
 </mapper>
