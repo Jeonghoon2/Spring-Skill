@@ -9,6 +9,6 @@ import lombok.ToString;
 @ToString
 public class Page {
 
-    private int page;
 
+    private Integer spage;
 }

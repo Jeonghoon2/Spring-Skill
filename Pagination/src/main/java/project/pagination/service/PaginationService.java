@@ -24,7 +24,7 @@ public class PaginationService {
         Integer count = gallerycount();
         Gallary gallary = null;
 
-        Integer injectPage = page.getPage();
+        Integer injectPage = page.getSpage();
         int fInjectPage = injectPage * 20; // 1 Page = 20
         int lInjectPage = injectPage * 30; // 2 Page = 40
 
